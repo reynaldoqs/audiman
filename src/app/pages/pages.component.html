@@ -5,21 +5,36 @@
     </div>
     <div class="item mid">
       <ul>
-        <li><a routerLink="/home" routerLinkActive="active">home</a></li>
-        <li><a routerLink="/about" routerLinkActive="active">about</a></li>
-        <li><a routerLink="/services" routerLinkActive="active">services</a></li>
+        <li><a [routerLink]="[{ outlets: { information: ['home'] } }]" routerLinkActive="active">home</a></li>
+        <li><a [routerLink]="[{ outlets: { information: ['about'] } }]" routerLinkActive="active">about</a></li>
+        <li><a [routerLink]="[{ outlets: { information: ['services'] } }]"routerLinkActive="active">services</a></li>
       </ul>
     </div>
     <div class="item right">
-      right
+        <ul>
+            <li><a [routerLink]="[{ outlets: { gallery: ['design'] } }]" routerLinkActive="active">design</a></li>
+            <li><a [routerLink]="[{ outlets: { gallery: ['develop'] } }]" routerLinkActive="active">develop</a></li>
+        </ul>
     </div>
   </nav>
 </div>
-<main [@routerAnimation]="routeState(routerOutlet)">
-  <div class="prueba">this is parata</div>
-  <router-outlet #routerOutlet="outlet"></router-outlet>
-  <div class="prueba">this is parata</div>
+
+<main [@informationAnimation]="routeState(informationOutlet)">
+
+  <div class="prueba">
+    <img src="../../assets/images/logo1.png" alt="">
+  </div>
+
+  <router-outlet #informationOutlet="outlet" name="information"></router-outlet>
+
+  <div class="prueba">
+    <img src="../../assets/images/logo1.png" alt="">
+  </div>
+
 </main>
-<section>
-  Something here
+
+<section [@galleryAnimation]="routeState(galleryOutlet)">
+
+    <router-outlet #galleryOutlet="outlet" name="gallery"></router-outlet>
+
 </section>

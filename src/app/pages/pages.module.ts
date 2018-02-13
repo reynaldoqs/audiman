@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { PagesComponent } from './pages.component';
-import { AboutComponent } from './about/about.component';
-import { ServicesComponent } from './services/services.component';
-import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './information/about/about.component';
+import { ServicesComponent } from './information/services/services.component';
+import { HomeComponent } from './information/home/home.component';
 import { PagesRoutingModule } from './pages.routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { DesignComponent } from './galleries/design/design.component';
+import { DevelopComponent } from './galleries/develop/develop.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +20,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     PagesComponent,
     AboutComponent,
     ServicesComponent,
-    HomeComponent
+    HomeComponent,
+    DesignComponent,
+    DevelopComponent
   ],
   exports: [
     PagesComponent

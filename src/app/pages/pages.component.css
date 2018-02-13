@@ -31,13 +31,15 @@ a{
     text-decoration-line: none;
 }
 main{
-    background-color: tomato;
+    background-image: url(../../assets/images/BG.jpg);
+    background-size: cover;
     overflow: hidden;
     height: 60vh;
 }
 section{
     height:calc(40vh - 40px);
-    background-color: slateblue;
+    display: flex;
+    overflow: hidden;
 }
 .active:after{
     content: '';
@@ -47,11 +49,15 @@ section{
     background-color: black;
 }
 .prueba{
-    width: 300px;
+    width: calc(50% - 350px);
     height: 100%;
-    background-color: blue;
     position: absolute;
     height:calc(60vh);
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 .prueba:last-child{
 right: 0;
